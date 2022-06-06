@@ -1,0 +1,67 @@
+<nav style="width: 100%;font-size: 35px;font-family:'Times New Roman', Times, serif ; color: rgb(36, 42, 220); " class="text-dark"><b>
+  
+    <h3 > <a routerLink="/register-component" style="color: rgb(214, 108, 26);" >Financial Wings</a> &nbsp;&nbsp;&nbsp;
+    </h3></b>
+    </nav>
+    <!-- The routed views render in the <router-outlet>-->
+
+<h1>Customer Application Details </h1><br>
+
+<div>
+    <div style="width: 40%;height: 50%; font-size: 20px;" class="mediclaim">
+        <form [formGroup]="form">
+            <table>
+                <div style="width: 1200%;">
+                    <td><label> Customer ID  :</label></td>
+                    <td><input type="text" [(ngModel)]="app.cid" formControlName="cid" style="margin-left: 10px;">
+                    <div *ngIf="f['cid'].touched&&f['cid'].invalid"></div>
+                        <div style="margin-left: 15px;" *ngIf="f['cid'].errors?.['required']"> Enter Customer ID</div> 
+                        <div style="margin-left: 15px;" *ngIf="f['cid'].errors?.['minlength']">Customer ID should be min 1 character</div> </td>
+                    </div>
+                    
+                    <div style="width: 120%;">
+                    <td><label> Application Status:</label></td>
+                        <td>
+                            <select name="AppStatus" [(ngModel)]="app.AppStatus" id="AppStatus" formControlName="AppStatus">
+                            <option value="Accepted">Accepted</option>
+                            <option value="Rejected">Rejected</option>
+                        </select></td>
+                    </div>
+
+                    
+
+                    <div style="width: 100%;">
+                        <td><label> Customer Mail:</label></td>
+                        <td><input type="text" [(ngModel)]="app.cmail" formControlName="cmail" style="margin-left: 10px;">
+                        <div *ngIf="f['cmail'].touched&&f['cmail'].invalid"></div>
+                            <div style="margin-left: 15px;" *ngIf="f['cmail'].errors?.['required']"> Enter Customer Email</div> 
+                            <div style="margin-left: 15px;" *ngIf="f['cmail'].errors?.['minlength']">Enter Valid Email ID</div> </td>
+                        </div>
+    
+                
+                <div style="width: 100%;">
+                    <td> <label>Loan Amount   :</label></td>
+                    <td> <input type="text" [(ngModel)]="app.LoanAmount" id="LoanAmount" formControlName="LoanAmount"></td>
+                    <div *ngIf="f['LoanAmount'].touched&&f['LoanAmount'].invalid">
+                        <div style="margin-left: 140px;" *ngIf="f['LoanAmount'].errors?.['required']"> Enter LoanAmount</div>
+                        <div style="margin-left: 140px;" *ngIf="f['LoanAmount'].errors?.['minlength']">Enter LoanAmount must be  min 3 character</div>
+                    </div>
+                </div>
+
+                <div style="width: 100%;">
+                    <td> <label>Application ID  :</label></td>
+                    <td> <input type="text" [(ngModel)]="app.Appid" id="Appid" formControlName="Appid"></td>
+                    <div *ngIf="f['Appid'].touched&&f['Appid'].invalid">
+                        <div style="margin-left: 140px;" *ngIf="f['Appid'].errors?.['required']"> Application ID </div>
+                        <div style="margin-left: 140px;" *ngIf="f['LoanAmount'].errors?.['minlength']">Enter Application should be min 1 character </div>
+                    </div>
+                </div>
+
+            </table>
+        </form>
+    </div>
+
+
+<div class="Leftcontent"><button (click)="saveapp()">Save</button></div>
+
+</div>

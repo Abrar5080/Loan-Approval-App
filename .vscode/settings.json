@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/d57dcdcd-2087-4f99-bfb7-cd39bf534fbe/resourceGroups/PratikPsh/providers/Microsoft.Web/sites/LoanApprovalApp",
+    "appService.deploySubpath": "src"
+}

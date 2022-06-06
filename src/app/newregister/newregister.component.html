@@ -1,0 +1,92 @@
+<nav style="width: 100%;font-size: 35px;font-family:'Times New Roman', Times, serif ; color: rgb(36, 42, 220); " class="text-dark"><b>
+  
+    <h3 > <a routerLink="/register-component" style="color: rgb(214, 108, 26);" >Financial Wings</a> &nbsp;&nbsp;&nbsp;
+    </h3></b>
+    </nav>
+    <!-- The routed views render in the <router-outlet>-->
+<h1>Customer Registration Details </h1><br>
+
+ <div>
+            <div style="width: 40%;height: 50%; font-size: 20px;" class="mediclaim">
+                <form [formGroup]="form">
+                    <table>
+                        <div style="width: 1200%;">
+                            <td><label> Customer ID  :</label></td>
+                            <td><input type="text" [(ngModel)]="register.cid" formControlName="cid" style="margin-left: 10px;">
+                            <div *ngIf="f['cid'].touched&&f['cid'].invalid"></div>
+                                <div style="margin-left: 15px;" *ngIf="f['cid'].errors?.['required']"> Enter Customer ID</div> 
+                                <div style="margin-left: 15px;" *ngIf="f['cid'].errors?.['minlength']">Customer should be min 3 character</div> </td>
+                            </div>
+                            <div style="width: 120%;">
+                            <td><label> First Name    :</label></td>
+                            <td><input type="text" [(ngModel)]="register.firstname" formControlName="firstname" style="margin-left: 10px;">
+                            <div *ngIf="f['firstname'].touched&&f['firstname'].invalid"></div>
+                                <div style="margin-left: 15px;" *ngIf="f['firstname'].errors?.['required']"> Enter FirstName</div> 
+                                <div style="margin-left: 15px;" *ngIf="f['firstname'].errors?.['minlength']">FirstName should be min 6 character</div> </td>
+                            </div>
+
+                            <div style="width: 100%;">
+                                <td><label>Last Name   :</label></td>
+                                <td><input type="text" [(ngModel)]="register.lastname" formControlName="lastname" style="margin-left: 10px;">
+                                <div *ngIf="f['lastname'].touched&&f['lastname'].invalid"></div>
+                                    <div style="margin-left: 30px;"  *ngIf="f['lastname'].errors?.['required']">Enter LastName:</div> 
+                                    <div style="margin-left: 30px;" *ngIf="f['lastname'].errors?.['minlength']">LastName should be min 6 character</div> </td>
+                            </div>
+
+                            <div style="width: 100%;">
+                                <td><label> Customer Mail:</label></td>
+                                <td><input type="text" [(ngModel)]="register.cmail" formControlName="cmail" style="margin-left: 10px;">
+                                <div *ngIf="f['cmail'].touched&&f['cmail'].invalid"></div>
+                                    <div style="margin-left: 15px;" *ngIf="f['cmail'].errors?.['required']"> Enter Email</div> 
+                                    <div style="margin-left: 15px;" *ngIf="f['cmail'].errors?.['minlength']">Enter Valid Email ID</div> </td>
+                                </div>
+            
+                            <div style="width: 100%;">
+                                <td><label>Customer PH:</label></td>
+                                <td> <input type="text" [(ngModel)]="register.cphn" id="cphn" formControlName="cphn"style="margin-left: 14px;" > </td>
+                                <div *ngIf="f['cphn'].touched&&f['cphn'].invalid">
+                                    <div style="margin-left: 135px;"  *ngIf="f['cphn'].errors?.['required']"> Enter Customer Phone</div>
+                                    <!-- <div style="margin-left: 135px;" *ngIf="f['cphn'].errors?.['minlength']">Contact Number should be min 10 character</div>  -->
+                                </div>
+                            </div> 
+            
+            
+                        <div style="width: 100%;">
+                            <td><label>Customer Adhar:</label></td>
+                           <td> <input type="text" [(ngModel)]="register.caddhaar" id="caddhaar" formControlName="caddhaar" style="margin-left: 14px;"> </td>
+                            <div *ngIf="f['caddhaar'].touched&&f['caddhaar'].invalid">
+                                <div style="margin-left: 140px;" *ngIf="f['caddhaar'].errors?.['required']"> Enter Customer Addhaar</div>
+                            </div>
+                        </div>
+            
+                        <div style="width: 100%;">
+                            <td><label for="LoanType">Loan Type:</label></td>
+                            <td>
+                                <select name="LoanType" [(ngModel)]="register.LoanType" id="LoanType" formControlName="LoanType">
+                                <option value="Home">Home</option>
+                                <option value="Car">Car</option>
+                                <option value="Personal">Personal</option>
+                            </select></td>
+                            <div *ngIf="f['LoanType'].touched&&f['LoanType'].invalid">
+                                <div style="margin-left: 140px;" *ngIf="f['LoanType'].errors?.['required']"> Enter Loan Type</div>
+                            </div>
+                        </div>
+                        
+                        <div style="width: 100%;">
+                            <td> <label>Loan Amount   :</label></td>
+                            <td> <input type="text" [(ngModel)]="register.LoanAmount" id="LoanAmount" formControlName="LoanAmount"></td>
+                            <div *ngIf="f['LoanAmount'].touched&&f['LoanAmount'].invalid">
+                                <div style="margin-left: 140px;" *ngIf="f['LoanAmount'].errors?.['required']"> Enter LoanAmount</div>
+                                <!-- <div style="margin-left: 140px;" *ngIf="f['LoanAmount'].errors?.['minlength']">Enter Loan_Amount must be Less than 50000 </div> -->
+                            </div>
+                        </div>
+
+
+                    </table>
+                </form>
+            </div>
+
+<br>
+  <div class="leftcontent"><button (click)="savereg()">Register Customer</button></div>
+
+</div>
